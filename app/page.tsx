@@ -32,6 +32,36 @@ export default function Home() {
   };
 
   if (!girisYapildi) {
-    return (
-      <main className="min-h-screen bg-black text-white flex flex-col items-center justify-center gap-5">
-        <h1 class
+  return (
+    <main className="min-h-screen bg-black text-white flex flex-col items-center justify-center gap-5">
+      
+      <h1 className="text-5xl font-bold">
+        AYPARK GİRİŞ
+      </h1>
+
+      <input
+        type="text"
+        placeholder="Kullanıcı adı"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+        className="p-3 rounded text-black w-72"
+      />
+
+      <input
+        type="password"
+        placeholder="Şifre"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        className="p-3 rounded text-black w-72"
+      />
+
+      <button
+        onClick={girisYap}
+        className="bg-green-600 hover:bg-green-700 px-6 py-3 rounded"
+      >
+        Giriş Yap
+      </button>
+
+    </main>
+  );
+}
