@@ -41,7 +41,7 @@ export default function Home() {
           placeholder="Kullanıcı adı"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className="p-3 rounded text-black w-72"
+          className="p-3 rounded text-black bg-white"
         />
 
         <input
@@ -49,7 +49,7 @@ export default function Home() {
           placeholder="Şifre"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="p-3 rounded text-black w-72"
+          className="p-3 rounded text-black bg-white"
         />
 
         <button
@@ -63,24 +63,66 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-black text-white flex flex-col items-center justify-center gap-4 p-6">
-      <h1 className="text-5xl font-bold mb-6">AYPARK ANONS SİSTEMİ</h1>
+  <main className="min-h-screen bg-black text-white p-10">
 
-      <button onClick={() => play("/anil.mp3")} className="bg-green-500 px-10 py-4 rounded-xl text-2xl">Anıl Bey Kasa</button>
-      <button onClick={() => play("/muhammet.mp3")} className="bg-blue-500 px-10 py-4 rounded-xl text-2xl">Muhammet Bey Kasa</button>
-      <button onClick={() => play("/fatih.mp3")} className="bg-purple-500 px-10 py-4 rounded-xl text-2xl">Fatih Bey Kasa</button>
-      <button onClick={() => play("/ayhan.mp3")} className="bg-yellow-500 text-black px-10 py-4 rounded-xl text-2xl">Ayhan Bey Kasa</button>
-      <button onClick={() => play("/ramazan.mp3")} className="bg-red-500 px-10 py-4 rounded-xl text-2xl">Ramazan Bey Kasa</button>
-      <button onClick={() => play("/songul.mp3")} className="bg-pink-500 px-10 py-4 rounded-xl text-2xl">Songül Hanım Kasa</button>
-      <button onClick={() => play("/tunahan.mp3")} className="bg-indigo-500 px-10 py-4 rounded-xl text-2xl">Tunahan Bey Kasa</button>
-      <button onClick={() => play("/yeter.mp3")} className="bg-orange-500 px-10 py-4 rounded-xl text-2xl">Yeter Hanım Kasa</button>
-      <button onClick={() => play("/gulsum.mp3")} className="bg-teal-500 px-10 py-4 rounded-xl text-2xl">Gülsüm Hanım Kasa</button>
-      <button onClick={() => play("/kapanis10dakka.mp3")} className="bg-gray-500 px-10 py-4 rounded-xl text-2xl">Kapanış 10 Dakika</button>
-      <button onClick={() => play("/cumakapanis.mp3")} className="bg-white text-black px-10 py-4 rounded-xl text-2xl">Cuma Namazı Anonsu</button>
+    <h1 className="text-5xl font-bold text-center mb-10">
+      AYPARK ANONS SİSTEMİ
+    </h1>
 
-      <button onClick={cikisYap} className="bg-red-800 mt-6 px-8 py-3 rounded text-lg">
-        Çıkış Yap
-      </button>
-    </main>
-  );
-}
+    <div className="grid grid-cols-3 gap-10">
+
+      {/* Erkek Personel */}
+      <div className="flex flex-col gap-4">
+        <h2 className="text-3xl font-bold text-blue-400 mb-3">
+          Erkek Personel
+        </h2>
+
+        <button onClick={() => play("/anil.mp3")} className="bg-blue-600 p-5 rounded-xl text-2xl">Anıl Bey</button>
+
+        <button onClick={() => play("/muhammet.mp3")} className="bg-blue-600 p-5 rounded-xl text-2xl">Muhammet Bey</button>
+
+        <button onClick={() => play("/fatih.mp3")} className="bg-blue-600 p-5 rounded-xl text-2xl">Fatih Bey</button>
+
+        <button onClick={() => play("/ayhan.mp3")} className="bg-blue-600 p-5 rounded-xl text-2xl">Ayhan Bey</button>
+
+        <button onClick={() => play("/ramazan.mp3")} className="bg-blue-600 p-5 rounded-xl text-2xl">Ramazan Bey</button>
+
+        <button onClick={() => play("/tunahan.mp3")} className="bg-blue-600 p-5 rounded-xl text-2xl">Tunahan Bey</button>
+      </div>
+
+      {/* Bayan Personel */}
+      <div className="flex flex-col gap-4">
+        <h2 className="text-3xl font-bold text-pink-400 mb-3">
+          Bayan Personel
+        </h2>
+
+        <button onClick={() => play("/songul.mp3")} className="bg-pink-600 p-5 rounded-xl text-2xl">Songül Hanım</button>
+
+        <button onClick={() => play("/yeter.mp3")} className="bg-pink-600 p-5 rounded-xl text-2xl">Yeter Hanım</button>
+
+        <button onClick={() => play("/gulsum.mp3")} className="bg-pink-600 p-5 rounded-xl text-2xl">Gülsüm Hanım</button>
+      </div>
+
+      {/* Genel Anons */}
+      <div className="flex flex-col gap-4">
+        <h2 className="text-3xl font-bold text-green-400 mb-3">
+          Genel Anons
+        </h2>
+
+        <button onClick={() => play("/cumakapanis.mp3")} className="bg-green-600 p-5 rounded-xl text-2xl">
+          Cuma Namazı
+        </button>
+
+        <button onClick={() => play("/kapanis10dakka.mp3")} className="bg-red-600 p-5 rounded-xl text-2xl">
+          Kapanış 10 Dakika
+        </button>
+
+        <button onClick={cikisYap} className="bg-gray-700 p-5 rounded-xl text-2xl mt-10">
+          Çıkış Yap
+        </button>
+      </div>
+
+    </div>
+
+  </main>
+);
